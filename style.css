@@ -1,0 +1,424 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://blog.k-rara.com/wp-content/uploads/2018/06/main-12.jpg);
+  background-size: cover;
+}
+
+
+#main {
+  width: 70%;
+  margin: 5rem auto;
+}
+
+.btn-square {
+  margin-top: 80px;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #ffffff;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square:active {
+  /*ボタンを押したとき*/
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+
+.h2 {
+width: 75%;
+margin: 0 auto;
+
+  position: relative;
+  background: #dfefff;
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+}
+.h2::after {
+  position: absolute;
+  content: '';
+  left: -7px;
+  top: -7px;
+  border-width: 0 0 15px 15px;
+  border-style: solid;
+  border-color: #fff #fff #a8d4ff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+
+.ribbon {
+  display: inline-block;
+  position: relative;
+  height: 60px;/*高さ*/
+  line-height: 60px;/*行の高さ*/
+  text-align: center;
+  padding: 0 40px 0 18px;/*文字の左右の余白*/
+  font-size: 48px;/*文字サイズ*/
+  background: #80c4ff;/*背景色*/
+  color: #ffffff;/*文字色*/
+}
+.ribbon::after {
+  position: absolute;
+  content: '';
+  width: 0px;
+  height: 0px;
+  top: 0;
+  right: 0;
+  border-width: 30px 15px 30px 0px;
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
+}
+
+
+.comment {
+  width: 100%;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #ff7206;
+  font-size: 30px;
+  background: #2e5488;
+}
+.comment::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  margin-left: -50px;
+  border: 15px solid transparent;
+  border-top: 15px solid hwb(215 0% 56%);
+}
+.comment p {
+  margin: 0;
+}
+
+
+.card {
+  display:inline-block;
+  margin: 10px;
+}
+
+
+.cardbox {
+  text-align: center;
+  margin-bottom:auto;
+}
+
+.carousel-item {
+  width: 1000px;
+  height: 500px;
+}
+
+
+/* Navbar & Navmenu color */
+:root {
+    --background-navbar: rgba(55, 55, 55, 0.98);
+    --header: 52px;
+    scroll-padding: calc(var(--header) + 30px);
+  }
+  .header {
+  background: var(--background-navbar);
+  position: fixed;
+  width: 100%;
+  height: 52px;
+  top: 0; /*上辺からの距離を0に設定*/
+  z-index: 10; /*要素の重なり順を指定*/
+}
+/* Nav items */
+.menu {
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  margin-top: 52px;
+  padding: 0 0 10px 0;
+  clear: both;
+  background: var(--background-navbar);
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  transform: scale(1, 0);
+  transform-origin: top;
+}
+/* Hamburger menu button */
+.menu-btn:checked ~ .menu {
+  transform: scale(1, 1);
+  transform-origin: top;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+/* Hamburger menbu text */
+.menu a {
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ddd;
+  opacity: 0;
+  transition: 0.5s;
+}
+.menu li {
+  border-top: 1px solid rgb(75, 75, 75);
+  padding: 15px 0;
+  margin: 0 54px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.menu-btn:checked ~ .menu a,
+.menu-btn:checked ~ .menu li {
+  opacity: 1;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+}
+.menu-btn {
+  display: none;
+}
+.menu-icon {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 24px 14px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.navicon {
+  background: #ddd;
+  display: block;
+  height: 3px;
+  width: 26px;
+  position: relative;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+.navicon:before,
+.navicon:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #ddd;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+.navicon:before {
+  top: 9px;
+}
+.navicon:after {
+  bottom: 9px;
+}
+/* Hamburger Menu Animation Start */
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+  top: 0;
+}
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  bottom: 0;
+}
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: rgba(0, 0, 0, 0);
+  transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+/* Hamburger Menu Animation End */
+/* Navbar Container */
+.navtext-container {
+  width: 100%;
+  height: 52px;
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Navbar Text */
+.navtext {
+  position: absolute;
+  text-transform: uppercase;
+  color: #ddd;
+  letter-spacing: 4px;
+  font-size: 20px;
+}
+
+
+.box-inner{
+  margin: 0px 0;
+}
+.box{
+  display: block; /*<img>をブロック要素として表示*/
+  position: relative;
+  width: 50%;
+  margin: 100px auto;
+}  
+.fade-in {
+  opacity: 0; /*"scroll-in"クラスが追加されるまで非表示*/
+  transition-duration: 500ms;
+  transition-property: opacity, transform;
+}  
+.fade-in-up {
+  transform: translate(0, 50px);
+}  
+.fade-in-down {
+  transform: translate(0, -50px);
+}  
+.fade-in-left {
+  transform: translate(-50px, 0);
+}  
+.fade-in-right {
+  transform: translate(50px, 0);
+}  
+.scroll-in {
+  opacity: 1; /*"scroll-in"クラスが追加されたら表示*/
+  transform: translate(0, 0);
+}
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap");
+
+
+.box {
+	width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+ .btn {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 50px;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+ .btn a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	padding: 10px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+ .btn:hover a {
+	letter-spacing: 3px;
+}
+ .btn a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+	transform: skewX(45deg) translate(0);
+	transition: 0.5s;
+	filter: blur(0px);
+}
+ .btn:hover a::before {
+	transform: skewX(45deg) translate(200px);
+}
+ .btn::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	bottom: -5px;
+	width: 30px;
+	height: 10px;
+	background: #f00;
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+}
+ .btn:hover::before /*lightup button*/ {
+	bottom: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+}
+
+ .btn::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	top: -5px;
+	width: 30px;
+	height: 10px;
+	background: #f00;
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+}
+ .btn:hover::after /*lightup button*/ {
+	top: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+}
+ .btn:nth-child(3)::before, /* 3*/
+ .btn:nth-child(3)::after {
+	background: #a1f8b0;
+	box-shadow: 0 0 5px #b2ffbf, 0 0 15px #1eff45, 0 0 30px #1eff45,
+		0 0 60px #1eff45;
+}
+
+.name{
+  margin: 10px auto;
+  width: 50%;
+}
+.name h1 {
+  text-align: center;
+  background-color: aqua;
+}
+
+.name2{
+  margin: 10px auto;
+  width: 50%;
+}
+.name2 h1 {
+  text-align: center;
+  background-color: aqua;
+}
+
+h3 {
+  color: rgb(255, 166, 0);
+  -webkit-text-stroke: 1px rgb(88, 88, 88);
+  margin: 30px;
+  background-image: url(data:image/jpeg;base64,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);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
